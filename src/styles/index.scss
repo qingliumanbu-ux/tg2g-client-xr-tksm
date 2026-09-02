@@ -1,0 +1,20 @@
+#sub-app {
+  height: 100%;
+}
+
+html, body {
+  padding: 0px;
+  width: auto;
+  height: 100%;
+  position: relative;
+}
+.MMLC_BUTTON
+{
+  border-top: 1px solid rgb(230, 235, 245);
+  border-bottom: 1px solid rgb(11, 69, 163);
+  border-right:  1px solid rgb(11, 69, 163);
+  border-left: 1px solid rgb(230, 235, 245); 
+  text-align: center;
+  background: #dbefff !important;
+  border: 1px solid;
+}

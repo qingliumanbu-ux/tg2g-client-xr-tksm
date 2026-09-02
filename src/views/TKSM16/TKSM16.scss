@@ -1,0 +1,682 @@
+@function getHeight($num) {
+  @return $num * 0.00125 * 100vh;
+}
+
+#taigang {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: 900 !important;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    height: getHeight(275);
+    margin-top: 8px;
+    .dev {
+      overflow: hidden;
+      width: 11%;
+      height: 100%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      margin-left: 8px;
+      font-size: getHeight(14);
+      background-color: RGBA(220, 234, 218, 1);
+      .title {
+        height: getHeight(31);
+        line-height: getHeight(31);
+        text-indent: 1em;
+      }
+      .list-item {
+        cursor: pointer;
+        padding: 5px;
+        background-color: RGBA(220, 234, 218, 1);
+        margin-bottom: 5px;
+        text-indent: 2em;
+        .devtitle {
+          padding: 10px;
+        }
+      }
+      .list-item:hover {
+        background-color: RGBA(245, 234, 218, 1);
+      }
+    }
+    .sum {
+      width: 89%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      margin: 0 8px;
+
+      .title {
+        font-size: getHeight(14);
+        height: getHeight(31);
+        line-height: getHeight(31);
+        padding: 10px;
+      }
+      .echarts {
+        display: flex;
+        justify-content: space-evenly;
+        height: getHeight(240);
+        text-align: center;
+
+        .ritanqiangdu {
+          display: flex;
+          flex-direction: column;
+          width: 18.7%;
+          .title {
+            font-size: getHeight(12);
+            color: darkgray;
+            padding: 5px;
+          }
+        }
+        .leijitanqiangdu {
+          display: flex;
+          flex-direction: column;
+          width: 18.7%;
+          .title {
+            font-size: getHeight(12);
+            color: darkgray;
+            padding: 5px;
+          }
+        }
+        .riqushi {
+          width: 25%;
+
+          #chart-container-ri {
+            height: 100%;
+          }
+        }
+        .yuequshi {
+          width: 25%;
+
+          #chart-container-yue {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .grouptop {
+    display: flex;
+    justify-content: space-between;
+    height: getHeight(265);
+    margin: 8px 8px;
+
+    .jia {
+      overflow: hidden;
+      width: 50%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      .groupleft {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+
+        .title {
+          font-size: getHeight(14);
+          height: getHeight(31);
+          line-height: getHeight(31);
+          padding: 10px;
+        }
+        .echarts {
+          height: getHeight(150);
+
+          .des {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .des1 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 103, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+            .des2 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 133, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+          }
+        }
+        .groupdata {
+          position: relative;
+          height: getHeight(25);
+          justify-content: space-between;
+          align-items: center;
+
+          background-color: rgb(226, 230, 230);
+
+          .tip {
+            height: getHeight(18);
+            padding-left: 5%;
+            width: 80%;
+            margin-top: getHeight(5);
+            line-height: getHeight(18);
+            background: linear-gradient(
+              45deg,
+              RGBA(208, 244, 208, 1),
+              RGBA(208, 244, 208, 1) 80%,
+              transparent 80%,
+              transparent
+            );
+            font-size: getHeight(12);
+            color: rgba(120, 120, 121, 1);
+            font-weight: 800;
+            .unit {
+              font-size: getHeight(10);
+            }
+          }
+
+          .num {
+            position: absolute;
+            right: 0;
+
+            top: getHeight(5);
+            font-size: getHeight(15);
+            color: rgba(120, 120, 121, 1);
+          }
+        }
+      }
+      .groupright {
+        width: 80%;
+        height: 100%;
+
+        .riqushi {
+          height: 50%;
+          #chart-container-ri-jia {
+            height: 150%;
+          }
+        }
+        .yuequshi {
+          height: 50%;
+          #chart-container-yue-jia {
+            height: 150%;
+          }
+        }
+      }
+    }
+    .yi {
+      overflow: hidden;
+      width: 50%;
+      margin-left: 5px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      .groupleft {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        .title {
+          font-size: getHeight(14);
+          height: getHeight(31);
+          line-height: getHeight(31);
+          padding: 10px;
+        }
+        .echarts {
+          height: getHeight(150);
+
+          .des {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .des1 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 103, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+            .des2 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 133, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+          }
+        }
+        .groupdata {
+          position: relative;
+          height: getHeight(29);
+          justify-content: space-between;
+          align-items: center;
+
+          background-color: rgb(226, 230, 230);
+
+          .tip {
+            height: getHeight(18);
+            padding-left: 5%;
+            width: 80%;
+            margin-top: getHeight(5);
+            line-height: getHeight(18);
+            background: linear-gradient(
+              45deg,
+              RGBA(208, 244, 208, 1),
+              RGBA(208, 244, 208, 1) 80%,
+              transparent 80%,
+              transparent
+            );
+            font-size: getHeight(12);
+            color: rgba(120, 120, 121, 1);
+            font-weight: 800;
+            .unit {
+              font-size: getHeight(10);
+            }
+          }
+
+          .num {
+            position: absolute;
+            right: 0;
+
+            top: getHeight(5);
+            font-size: getHeight(15);
+            color: rgba(120, 120, 121, 1);
+          }
+        }
+      }
+      .groupright {
+        width: 80%;
+        height: 100%;
+
+        .riqushi {
+          height: 50%;
+          #chart-container-ri-yi {
+            height: 150%;
+          }
+        }
+        .yuequshi {
+          height: 50%;
+          #chart-container-yue-yi {
+            height: 150%;
+          }
+        }
+      }
+    }
+  }
+  .groupbottom {
+    display: flex;
+    justify-content: space-between;
+    height: getHeight(265);
+    margin: 0 8px 8px;
+
+    .bing {
+      overflow: hidden;
+      width: 50%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      .groupleft {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        .title {
+          font-size: getHeight(14);
+          height: getHeight(31);
+          line-height: getHeight(31);
+          padding: 10px;
+        }
+        .echarts {
+          height: getHeight(150);
+
+          .des {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .des1 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 103, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+            .des2 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 133, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+          }
+        }
+        .groupdata {
+          position: relative;
+          height: getHeight(29);
+          justify-content: space-between;
+          align-items: center;
+
+          background-color: rgb(226, 230, 230);
+
+          .tip {
+            height: getHeight(18);
+            padding-left: 5%;
+            width: 80%;
+            margin-top: getHeight(5);
+            line-height: getHeight(18);
+            background: linear-gradient(
+              45deg,
+              RGBA(208, 244, 208, 1),
+              RGBA(208, 244, 208, 1) 80%,
+              transparent 80%,
+              transparent
+            );
+            font-size: getHeight(12);
+            color: rgba(120, 120, 121, 1);
+            font-weight: 800;
+            .unit {
+              font-size: getHeight(10);
+            }
+          }
+
+          .num {
+            position: absolute;
+            right: 0;
+
+            top: getHeight(5);
+            font-size: getHeight(15);
+            color: rgba(120, 120, 121, 1);
+          }
+        }
+      }
+      .groupright {
+        width: 80%;
+        height: 100%;
+        .riqushi {
+          height: 50%;
+          #chart-container-ri-bing {
+            height: 150%;
+          }
+        }
+        .yuequshi {
+          height: 50%;
+          #chart-container-yue-bing {
+            height: 150%;
+          }
+        }
+      }
+    }
+    .ding {
+      overflow: hidden;
+      width: 50%;
+      margin-left: 5px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      .groupleft {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        .title {
+          font-size: getHeight(14);
+          height: getHeight(31);
+          line-height: getHeight(31);
+          padding: 10px;
+        }
+        .echarts {
+          height: getHeight(150);
+
+          .des {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .des1 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 103, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+            .des2 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .top {
+                display: flex;
+                flex-direction: row;
+                height: getHeight(20);
+                .point {
+                  margin: 7px 2px;
+                  width: 10px;
+                  height: 10px;
+                  background-color: RGBA(32, 159, 133, 1);
+                  border-radius: 50%;
+                }
+                .title {
+                  font-size: 7px;
+                  height: 7px;
+                  line-height: 7px;
+                }
+              }
+              .zhi {
+                margin-top: 5px;
+                font-size: 10px;
+                height: 7px;
+                line-height: 7px;
+              }
+            }
+          }
+        }
+        .groupdata {
+          position: relative;
+          height: getHeight(29);
+          justify-content: space-between;
+          align-items: center;
+
+          background-color: rgb(226, 230, 230);
+
+          .tip {
+            height: getHeight(18);
+            padding-left: 5%;
+            width: 80%;
+            margin-top: getHeight(5);
+            line-height: getHeight(18);
+            background: linear-gradient(
+              45deg,
+              RGBA(208, 244, 208, 1),
+              RGBA(208, 244, 208, 1) 80%,
+              transparent 80%,
+              transparent
+            );
+            font-size: getHeight(12);
+            color: rgba(120, 120, 121, 1);
+            font-weight: 800;
+            .unit {
+              font-size: getHeight(10);
+            }
+          }
+
+          .num {
+            position: absolute;
+            right: 0;
+
+            top: getHeight(5);
+            font-size: getHeight(15);
+            color: rgba(120, 120, 121, 1);
+          }
+        }
+      }
+      .groupright {
+        width: 80%;
+        height: 100%;
+
+        .riqushi {
+          height: 50%;
+          #chart-container-ri-ding {
+            height: 150%;
+          }
+        }
+        .yuequshi {
+          height: 50%;
+          #chart-container-yue-ding {
+            height: 150%;
+          }
+        }
+      }
+    }
+  }
+}

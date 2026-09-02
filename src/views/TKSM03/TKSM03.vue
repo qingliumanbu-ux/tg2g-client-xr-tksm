@@ -1,0 +1,28 @@
+<template>
+  <xr-ef-form @ready="efFormReady"
+    :f2-do="F2_DO">
+    <er-layout v-if="initializeFlag === 1"
+      :er-form-helper-prop="erFormHelper"
+      :config-id="'LayoutGroupFilter'"></er-layout>
+    <xr-ef-panel title="合金碳排"
+      padding="5px">
+      <template #contentSlot>
+        <er-grid v-if="initializeFlag === 1"
+          :er-form-helper-prop="erFormHelper"
+          :config-id="'gridView1'"
+          :options="{viewType: 'BandView'}"
+          @erGridReady="erGrid1Ready">
+        </er-grid>
+      </template>
+    </xr-ef-panel>
+  </xr-ef-form>
+</template>
+
+<script lang="ts"
+  src="./TKSM03.ts">
+</script>
+
+<style lang="scss"
+  scoped>
+@import './TKSM03.scss';
+</style>
